@@ -1,12 +1,6 @@
-// Example of constructing pdfform
-// If you don't care about which PDF library to use, just call without arguments, as in
-// pdfform().transform(..) / pdfform().list_fields(...)
 function make_pdfform() {
 	return pdfform();
 }
-
-// Example of filling out fields
-
 
 function get_form_fields() {
 	var url_string = document.URL;
@@ -28,97 +22,76 @@ function get_form_fields() {
 	fields["luna"]=[luna_nastere];
 	fields["anul"]=[an_nastere];
 	fields["fill_8"]=[adresa_locuintei];
-	fields["fill_1"]= data_declaratiei != null ? [data_declaratiei] : [new Date().toJSON().slice(0,10).replace(/-/g,'/')];
-	switch (motivul_deplasarii) {
-  case "1":
-    fields["Group1"]=["Choice1"];c
-    break;
-  case "2":
-    fields["Group2"] = ["Choice1"];
-    break;
-  case "3":
-     fields["Group3"] = ["Choice1"];
-    break;
-  case "4":
-    fields["Group4"] = ["Choice1"];
-    break;
-  case "5":
-    fields["Group5"] = ["Choice1"];
-    break;
-  case "6":
-    fields["Group6"] = ["Choice1"];
-    break;
-  case "7":
-    fields["Group7"] = ["Choice1"];
-    break;
-  case "8":
-    fields["Group8"] = ["Choice1"];
-    break;
-  case "9":
-    fields["Group9"] = ["Choice1"];
-    break;
-  case "10":
-    fields["Group10"] = ["Choice1"];
-    break;
-  case null:
-    fields["Group2"] = ["Choice1"];
-	break;
-}
+    fields["fill_1"]= data_declaratiei != null ? [data_declaratiei] : [new Date().toJSON().slice(0,10).replace(/-/g,'/')];
     fields["fill_10"]=locul_deplasarii != null ? [locul_deplasarii] : ["Supermarket"]
     
-    fields["Group1"]=["Choice1"];
-    fields["Group2"]=["Yes"];
-    fields["Group3"]=["On"];
-    fields["Group4"]=["yes"];
-    fields["Group5"]=["Da"];
-    fields["Group6"]=["1"];
-    fields["Group7"]=["da"];
-    fields["Group8"]=["on"];
-    fields["Group9"]=["Choice1"];
-    fields["Group10"]=["Choice1"];
-
-	
+	switch (motivul_deplasarii) {
+        case "1":
+            fields["Group1"]=["Choice1"];c
+            break;
+        case "2":
+            fields["Group2"] = ["Choice1"];
+            break;
+        case "3":
+            fields["Group3"] = ["Choice1"];
+            break;
+        case "4":
+            fields["Group4"] = ["Choice1"];
+            break;
+        case "5":
+            fields["Group5"] = ["Choice1"];
+            break;
+        case "6":
+            fields["Group6"] = ["Choice1"];
+            break;
+        case "7":
+            fields["Group7"] = ["Choice1"];
+            break;
+        case "8":
+            fields["Group8"] = ["Choice1"];
+            break;
+        case "9":
+            fields["Group9"] = ["Choice1"];
+            break;
+        case "10":
+            fields["Group10"] = ["Choice1"];
+            break;
+        case null:
+            fields["Group2"] = ["Choice1"];
+            break;
+}
 	return fields;
-	
 }
 
-
 function fill(buf) {
-
 	var fields = get_form_fields();
 	var filled_pdf; // Uint8Array
 	try {
 		filled_pdf = make_pdfform().transform(buf, fields);
-	} catch (e) {
+    }
+    catch (e) {
 		return on_error(e);
 	}
-
 	var blob = new Blob([filled_pdf], {type: 'application/pdf'});
     saveAs(blob, 'pdfform.js_generated.pdf');      
 }
 
 function read_default_pdf(){
     var xhr = new XMLHttpRequest();
-		xhr.open('GET', "original.pdf", true);
-		xhr.responseType = 'arraybuffer';
-
-		xhr.onload = function() {
-			if (this.status == 200) {
-				fill(this.response);
-			} else {
-				on_error('failed to load URL (code: ' + this.status + ')');
-			}
-		};
-
-		xhr.send();
+	xhr.open('GET', "original.pdf", true);
+	xhr.responseType = 'arraybuffer';
+    xhr.onload = function() {
+        if (this.status == 200) {
+            fill(this.response);
+        } else {
+            on_error('failed to load URL (code: ' + this.status + ')');
+        }
+    };
+	xhr.send();
 }
 
-
-// From here on just code for this demo.
-// This will not feature in your website
 function on_error(e) {
-	console.error(e, e.stack);  // eslint-disable-line no-console
+	console.error(e, e.stack);
 }
-
 
 read_default_pdf()
