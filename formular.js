@@ -34,7 +34,7 @@ function get_form_fields() {
     fields["Group1"]=["Choice1"];
     break;
   case "2":
-    fields["Group2"] = ["1"];
+    fields["Group2"] = ["Choice1"];
     break;
   case "3":
      fields["Group3"] = ["Choice1"];
