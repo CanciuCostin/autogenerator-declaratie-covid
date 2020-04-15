@@ -8,9 +8,8 @@ function make_pdfform() {
 // Example of filling out fields
 function fill(buf) {
     fields={};
-    fields["nume"]=["a","b"];
+    fields["nume"]=["xxx"];
 	fields["prenume"]="Costin";
-	alert("a");
 	var list_form = document.querySelector('.list_form');
 	var filled_pdf; // Uint8Array
 	try {
