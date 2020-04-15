@@ -16,14 +16,14 @@ function get_form_fields() {
 	var data_declaratiei = url.searchParams.get("data_declaratiei");
 	
 	fields={};
-    fields["nume"]=[nume];
+    	fields["nume"]=[nume];
 	fields["prenume"]=[prenume];
 	fields["ziua"]=[zi_nastere];
 	fields["luna"]=[luna_nastere];
 	fields["anul"]=[an_nastere];
 	fields["fill_8"]=[adresa_locuintei];
-    fields["fill_1"]= data_declaratiei != null ? [data_declaratiei] : [new Date().toJSON().slice(0,10).replace(/-/g,'/')];
-    fields["fill_10"]=locul_deplasarii != null ? [locul_deplasarii] : ["Supermarket"]
+    	fields["fill_1"]= data_declaratiei != null ? [data_declaratiei] : [new Date().toJSON().slice(0,10).replace(/-/g,'/')];
+    	fields["fill_10"]=locul_deplasarii != null ? [locul_deplasarii] : ["Supermarket"]
     
 	switch (motivul_deplasarii) {
         case "1":
@@ -69,18 +69,18 @@ function fill(buf) {
 	try {
 		filled_pdf = make_pdfform().transform(buf, fields);
     }
-    catch (e) {
+    	catch (e) {
 		return on_error(e);
 	}
 	var blob = new Blob([filled_pdf], {type: 'application/pdf'});
-    saveAs(blob, 'pdfform.js_generated.pdf');      
+    	saveAs(blob, 'pdfform.js_generated.pdf');      
 }
 
 function read_default_pdf(){
-    var xhr = new XMLHttpRequest();
+    	var xhr = new XMLHttpRequest();
 	xhr.open('GET', "original.pdf", true);
 	xhr.responseType = 'arraybuffer';
-    xhr.onload = function() {
+    	xhr.onload = function() {
         if (this.status == 200) {
             fill(this.response);
         } else {
