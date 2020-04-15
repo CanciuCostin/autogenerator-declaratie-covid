@@ -28,13 +28,13 @@ function get_form_fields() {
 	fields["luna"]=[luna_nastere];
 	fields["anul"]=[an_nastere];
 	fields["fill_8"]=[adresa_locuintei];
-	fields["Data declara&#539;iei"]= data_declaratiei != null ? [data_declaratiei] : [new Date().toJSON().slice(0,10).replace(/-/g,'/')];
+	fields["Data declarației"]= data_declaratiei != null ? [data_declaratiei] : [new Date().toJSON().slice(0,10).replace(/-/g,'/')];
 	switch (motivul_deplasarii) {
   case "1":
     fields["Group1"]=["Choice1"];
     break;
   case "2":
-    fields["Group2"] = ["Choice1"];
+    fields["Group2"] = ["1"];
     break;
   case "3":
      fields["Group3"] = ["Choice1"];
