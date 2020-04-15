@@ -8,7 +8,7 @@ function make_pdfform() {
 // Example of filling out fields
 function fill(buf) {
     fields={};
-    fields["nume"]="Canciu";
+    fields["nume"]=["a","b"];
 	fields["prenume"]="Costin";
 	alert("a");
 	var list_form = document.querySelector('.list_form');
