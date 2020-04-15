@@ -10,7 +10,7 @@ function fill(buf) {
     fields={};
     fields["nume"]="Canciu";
 	fields["prenume"]="Costin";
-	
+	alert("a");
 	var list_form = document.querySelector('.list_form');
 	var filled_pdf; // Uint8Array
 	try {
