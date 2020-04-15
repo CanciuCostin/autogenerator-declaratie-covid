@@ -2,13 +2,13 @@
 
 Ai uitat sa completezi declaratie si politia e pe urmele tale?
 
-Intra [aici](https://canciucostin.github.io/autogenerator-declaratie-covid) cu parametrii mentionati mai jos si descarca declaratia
+Intra [aici](https://canciucostin.github.io/autogenerator-declaratie-covid19) cu parametrii mentionati mai jos si descarca declaratia
 
 ## Instructiuni
 
 Exemplu link:
 
-https://canciucostin.github.io/autogenerator-declaratie-covid?nume=Popescu&prenume=Gigel&an_nastere=1996&luna_nastere=01&zi_nastere=01&adresa_locuintei=Soseaua Oltenitei
+https://canciucostin.github.io/autogenerator-declaratie-covid19?nume=Popescu&prenume=Gigel&an_nastere=1996&luna_nastere=01&zi_nastere=01&adresa_locuintei=Soseaua Oltenitei
 
 
 ### Parametrii
