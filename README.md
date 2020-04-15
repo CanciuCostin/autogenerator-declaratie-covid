@@ -8,7 +8,7 @@ Intra [aici](https://canciucostin.github.io/autogenerator-declaratie-covid19) cu
 
 Exemplu link:
 
-https://canciucostin.github.io/autogenerator-declaratie-covid19?nume=Popescu&prenume=Gigel&an_nastere=1996&luna_nastere=01&zi_nastere=01&adresa_locuintei=Soseaua Oltenitei
+https://canciucostin.github.io/autogenerator-declaratie-covid19?nume=Popescu&prenume=Gigel&an_nastere=1996&luna_nastere=01&zi_nastere=01&adresa_locuintei=Bucuresti
 
 
 ### Parametrii
