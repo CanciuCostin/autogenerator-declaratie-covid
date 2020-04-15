@@ -7,11 +7,12 @@ Intra [aici](https://canciucostin.github.io/autogenerator-declaratie-covid) cu p
 ## Instructiuni
 
 Exemplu link:
-```
+
 https://canciucostin.github.io/autogenerator-declaratie-covid?nume=Popescu&prenume=Gigel&an_nastere=1996&luna_nastere=01&zi_nastere=01&adresa_locuintei=Soseaua Oltenitei
-```
+
 
 ### Parametrii
+
 * nume
 * prenume
 * an_nastere
