@@ -1,6 +1,6 @@
 # Autogenerator Declaratie Covid19
 
-Ai uitat sa completezi declaratie si politia e pe urmele tale?
+Ai iesit din casa si ai uitat sa completezi declaratia covid19?
 
 Intra [aici](https://canciucostin.github.io/autogenerator-declaratie-covid19) cu parametrii mentionati mai jos si descarca declaratia
 
